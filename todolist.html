@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./todo.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+}
+
+.warpper {
+  margin: 120px auto;
+  max-width: 400px;
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  padding: 25px;
+}
+.warpper header {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.warpper .input__field {
+  justify-content: center;
+  display: flex;
+  height: 35px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.warpper .input__field input {
+  width: 90%;
+  border-radius: 3px;
+  padding: 0 15px;
+  border: none;
+  border: 2px solid black;
+}
+.warpper .input__field button {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  margin-left: 5px;
+  background: #ccc;
+  border: none;
+  color: black;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s linear;
+}
+.warpper .input__field button:hover {
+  background: #37d5d6;
+  color: white;
+}
+
+.warpper .todo__list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.todo__list li {
+  list-style: none;
+  position: relative;
+  background: #d8d8d8;
+  border-radius: 3px;
+  height: 35px;
+  margin: 10px 0px;
+  padding: 5px 20px;
+}
+
+.todo__list li input {
+  display: inline-block;
+  top: 50%;
+  transform: translatey(-50%);
+  position: absolute;
+  left: 13px;
+  height: 100%;
+  cursor: pointer;
+}
+.todo__list li i {
+  display: inline-block;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  margin-right: 10px;
+}
+.footer {
+  margin-top: 20px;
+  width: 100%;
+  /* justify-content: space-between; */
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.content p {
+  padding: 0 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content p.checked {
+  text-decoration: line-through;
+}
+.content i {
+  cursor: pointer;
+}
+.footer button {
+  font-size: 13px;
+  cursor: pointer;
+  padding: 10px 12px;
+  position: absolute;
+  right: 0;
+  background: #ccc;
+  border: none;
+  border-radius: 3px;
+  color: black;
+  transition: 0.2s linear;
+}
+
+.footer button:hover {
+  background: #37d5d6;
+  color: white;
+}
+.footer .pendingTasks {
+  display: block;
+  padding: 0 5px;
+}
+@media screen and (max-width: 767.98px) {
+  body {
+    padding: 0 5%;
+  }
+}
+  </style>
+  <body>
+    <div class="warpper">
+      <header class="header">Hỗ trợ</header>
+      <div class="input__field">
+        <input type="text" placeholder="add todo" />
+        <button class="push"><i class="bx bx-plus"></i></button>
+      </div>
+      <ul class="todo__list">
+        <li class="content"><p>xin chào</p>
+                <input class="input-checkbox" type="checkbox">
+                <i class='bx bx-trash trash'></i>
+            </li> 
+      </ul>
+      <div class="footer">
+        <span class="pendingTasks"> Xin hãy liên hệ:</span>
+        <span class="pendingTasksNumb"></span>
+        <span class="pendingTasks">+84939919079</span>
+        <button class="clear-all"><span>Clear All</span></button>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
